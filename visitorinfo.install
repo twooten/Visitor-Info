@@ -96,26 +96,8 @@ $schema['visitorinfo'] = array(
         'not null' => TRUE,
         'default' => 0.0,
     ),
-    'last_updated' => array(
-      'type' => 'int',
-      'unsigned' => TRUE,
-      'not null' => TRUE,
-      'default' => 0
-    ),
   ),
   'primary key' => array('csid'),
-);       
+  );       
   return $schema;
-
-}
-
-function visitorinfo_update_6100() {
-  $ret = array();
-  db_add_field($ret, 'visitorinfo', 'last_updated', array(
-    'type' => 'int',
-    'unsigned' => TRUE,
-    'not null' => TRUE,
-    'default' => 0
-  ));
-  return $ret;
 }
